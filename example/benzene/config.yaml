@@ -8,9 +8,9 @@ list_numIons:
 - 8
 - 9
 - 16
-model_name: ANI
+model_name: CHGNet
 num_conformers: 5
-num_structures: 100
+num_structures: 10
 root_folder: ../example/benzene/
 ml_mode: proba_threshold_random
 sg_mode: random

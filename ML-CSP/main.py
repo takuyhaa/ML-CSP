@@ -484,14 +484,18 @@ def set_calculator(model_name):
         from chgnet.model.dynamics import CHGNetCalculator
         import torch
         model = CHGNet().load()
-        weights = torch.load('../../chgnet/result/FT_PFPv5_rslt_10000_240321_AdamW_lr0.01/epoch19_e0_f0_sNA_mNA.pth.tar')
-        model.load_state_dict(state_dict=weights['model']['state_dict'])
-        calculator = CHGNetCalculator(model=model, use_device='cuda:0')
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        calculator = CHGNetCalculator(model=model, use_device=device)
     elif model_name == 'PFP':
         from pfp_api_client.pfp.calculators.ase_calculator import ASECalculator
         from pfp_api_client.pfp.estimator import Estimator, EstimatorCalcMode
-        model = Estimator(calc_mode=EstimatorCalcMode.CRYSTAL_U0_PLUS_D3, model_version="v5.0.0")
+        model = Estimator(calc_mode=EstimatorCalcMode.CRYSTAL_U0_PLUS_D3, model_version="v6.0.0")
         calculator = ASECalculator(model)
+    elif model_name == 'ANI':
+        import torch, torchani
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        model = torchani.models.ANI2x()
+        calculator = model.ase()
     return calculator
 
 

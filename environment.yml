@@ -1,4 +1,4 @@
-name: molcsp
+name: mlcsp
 channels:
   - pytorch
   - nvidia
