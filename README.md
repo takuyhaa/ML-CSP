@@ -32,3 +32,8 @@
 
    ```bash
    python ML-CSP/main.py example/benzene/config.yaml
+
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
