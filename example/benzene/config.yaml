@@ -1,0 +1,20 @@
+conformer_mode: search
+list_numIons:
+- 1
+- 2
+- 3
+- 4
+- 6
+- 8
+- 9
+- 16
+model_name: ANI
+num_conformers: 5
+num_structures: 100
+root_folder: ../example/benzene/
+ml_mode: proba_threshold_random
+sg_mode: random
+Z_mode: random
+density_mode: random
+lattice_mode: None
+smiles: c1ccccc1
