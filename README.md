@@ -28,10 +28,26 @@
    conda env create -f environment.yml
    conda activate mlcsp
 
+1. **Download models:**
+   
+   ```bash
+   sudo apt-get install git-lfs
+   git lfs install
+   git lfs pull
+   ```
+   ML models are provided via GitHub Large File System (LFS). So, you need to set up git-lfs.  
+   The above command is available for Ubuntu/Debian.
+
+
 1. **Start CSP:**
 
    ```bash
-   python ML-CSP/main.py example/benzene/config.yaml
+   cd ML-CSP
+   python main.py ../example/benzene/config.yaml
+   ```
+   The excecution may arise import error.  
+   If you encounter `ModuleNotFoundError`, please excecute `pip install MODULE`.
+   
 
 ## Neural Network Potential
 ML-CSP incorporates three Neural Network Potentials (NNPs) for structure relaxation:
