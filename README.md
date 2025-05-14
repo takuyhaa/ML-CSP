@@ -33,6 +33,31 @@
    ```bash
    python ML-CSP/main.py example/benzene/config.yaml
 
+## Neural Network Potential
+ML-CSP incorporates three Neural Network Potentials (NNPs) for structure relaxation:
+
+1. **CHGNet**: A pretrained universal neural network potential for charge-informed atomistic modeling.
+2. **ANI**: An extensible neural network potential with DFT accuracy at force field computational cost.
+3. **PFP (PreFerred Potential)**: A universal neural network potential developed by Matlantis, requiring a valid license for use.
+
+### CHGNet
+To install CHGNet, you can use pip:
+
+```bash
+pip install chgnet
+```
+
+### ANI
+
+To install ANI, you can use pip:
+
+```bash
+pip install torchani
+```
+
+### PFP
+PFP is available on Matlantis and requires a valid license to use. For more information on obtaining a license and using PFP, please visit the Matlantis website.
+
 
 ## License
 
