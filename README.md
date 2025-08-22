@@ -28,7 +28,7 @@
    git lfs pull
    ```
 
-1. **Install Additional Dependencies**  
+1. **Install Additional Dependencies (Optional)**  
    Some packages may require manual installation:
    ```bash
    # If you encounter ModuleNotFoundError during execution
