@@ -326,6 +326,7 @@ dependencies:
   - zlib=1.2.13=h4ab18f5_6
   - zstandard=0.23.0=py39h2c38b39_1
   - zstd=1.5.6=ha6fb4c9_0
+　- autode==1.2.3
   - pip:
       - ase==3.25.0
       # - autode==1.2.3
