@@ -5,6 +5,17 @@
 **ML-CSP** is a machine learning framework designed for crystal structure prediction (CSP) of organic molecules. It provides tools and examples to demonstrate how machine learning techniques can be applied to CSPs, particularly in the context of chemical compound analysis.  
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/0fd53ab8-21d6-4d85-8006-d1bae0079ec6" />
 
+## System Requirements
+**Operating System:** Linux (Ubuntu/Debian recommended)  
+- The instructions and scripts are optimized for Linux environments
+- Windows users should use WSL (Windows Subsystem for Linux) or a virtual machine  
+
+**Python Version:** 3.9.18  
+
+**Hardware Requirements:**  
+- Minimum 8GB RAM (16GB+ recommended for larger molecules)
+- CUDA-compatible GPU (optional but recommended for faster computation)
+
 ## Installation
 1. **Clone the repository:**
    ```bash
