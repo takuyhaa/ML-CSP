@@ -19,8 +19,8 @@
 ## Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/takuyhaa/ML-CSP.git
-   cd ML-CSP
+   git clone https://github.com/takuyhaa/SPaDe-CSP.git
+   cd SPaDe-CSP
 
 1. **Set Up the Conda Environment**
    ```bash
