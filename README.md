@@ -51,7 +51,7 @@
 ## Quick Start Guide
 ### Running the Benzene Example
 ```bash
-cd ML-CSP
+cd SPaDe-CSP
 python main.py ../example/benzene/config.yaml
 ```
 This will:
