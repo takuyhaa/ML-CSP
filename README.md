@@ -25,7 +25,7 @@
 1. **Set Up the Conda Environment**
    ```bash
    conda env create -f environment.yml
-   conda activate mlcsp
+   conda activate spadecsp
 
 1. **Download Pre-trained Models**  
    ML models are provided via GitHub Large File System (LFS):
