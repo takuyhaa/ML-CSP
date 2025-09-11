@@ -1,8 +1,8 @@
-# ML-CSP
+# SPaDe (Space group and Packing Density predictor)-CSP
 
 ## Overview
 
-**ML-CSP** is a machine learning framework designed for crystal structure prediction (CSP) of organic molecules. It provides tools and examples to demonstrate how machine learning techniques can be applied to CSPs, particularly in the context of chemical compound analysis.  
+**SPaDe-CSP** is a framework for crystal structure prediction (CSP) of organic molecules using SPaDe (Space group and Packing Density predictor). It provides tools and examples to demonstrate how machine learning techniques can be applied to CSPs, particularly in the context of chemical compound analysis.  
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/0fd53ab8-21d6-4d85-8006-d1bae0079ec6" />
 
 ## System Requirements
@@ -19,13 +19,13 @@
 ## Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/takuyhaa/ML-CSP.git
-   cd ML-CSP
+   git clone https://github.com/takuyhaa/SPaDe-CSP.git
+   cd SPaDe-CSP
 
 1. **Set Up the Conda Environment**
    ```bash
    conda env create -f environment.yml
-   conda activate mlcsp
+   conda activate spadecsp
 
 1. **Download Pre-trained Models**  
    ML models are provided via GitHub Large File System (LFS):
