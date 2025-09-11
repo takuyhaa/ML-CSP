@@ -55,8 +55,8 @@ cd SPaDe-CSP
 python main.py ../example/benzene/config.yaml
 ```
 This will:
-1. Generate conformers from SMILES (c1ccccc1 for benzene)
-1. Create 10 crystal structures with random space groups and Z' values
+1. Generate conformers from SMILES (If the xyz file already exists in the xyz folder, use its molecular structure.)
+1. Create 10 crystal structures with random manner
 1. Optimize structures using CHGNet
 1. Save results to example/benzene/ directory
 
