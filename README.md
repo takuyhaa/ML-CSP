@@ -43,7 +43,7 @@
    Some packages may require manual installation:
    ```bash
    # If you encounter ModuleNotFoundError during execution
-   pip install chgnet  # For CHGNet potential
+   pip install chgnet    # For CHGNet potential
    pip install torchani  # For ANI potential
    ```
    *PFP is available on Matlantis and requires a valid license to use. For more information on obtaining a license and using PFP, please visit the Matlantis website.
@@ -52,7 +52,8 @@
 ### Running the Benzene Example
 ```bash
 cd SPaDe-CSP
-python main.py ../example/benzene/config.yaml
+python main.py ../example/benzene_random/config.yaml  # For Random-CSP
+python main.py ../example/benzene_SPaDe/config.yaml   # For SPaDe-CSP
 ```
 This will:
 1. Generate conformers from SMILES (If the xyz file already exists in the xyz folder, use its molecular structure.)
@@ -85,50 +86,50 @@ ID_0 (SG: 14, numIons: 4, n_atoms: 12, n_asym_unit: 12) generated
 Create a YAML configuration file for your molecule:
 ```yaml
 # Molecular Input
-smiles: "your_smiles_string"           # SMILES notation of your molecule
+smiles: "your_smiles_string"          # SMILES notation of your molecule
 
 # Conformer Generation
-conformer_mode: search                 # 'search' or 'predefined'
-num_conformers: 5                      # Number of conformers to generate
+conformer_mode: search                # 'search' or 'predefined'
+num_conformers: 5                     # Number of conformers to generate
 
 # Structure Generation
-num_structures: 100                    # Number of crystal structures to generate
-list_numIons: [1, 2, 3, 4, 6, 8]      # Possible Z' values (molecules per asymmetric unit)
+num_structures: 100                   # Number of crystal structures to generate
+list_numIons: [1,2,3,4,6,8,9,16]      # Possible Z values
 
 # ML-Guided Generation Modes
-ml_mode: proba_threshold_random        # ML probability mode
-sg_mode: ml                           # 'ml', 'random', 'sg95', or specific SG number
+ml_mode: proba_threshold_random       # ML probability mode
+sg_mode: ml                           # 'ml', 'random', 'sg95', 'sg99', or specific SG number
 Z_mode: ml                            # 'ml', 'random', or 'sg_dependent'
 density_mode: ml                      # 'ml' or 'random'
-lattice_mode: VAE                     # 'VAE' or 'None' for random
+lattice_mode: None
 
 # Optimization
 model_name: CHGNet                    # 'CHGNet', 'ANI', or 'PFP'
 
-# Output
-root_folder: results/your_molecule/   # Output directory path
+# Root
+root_folder: results/your_molecule/   # Path this yaml file exists
 ```
 
 ## How to Use Your Own Crystal Structures  
 ### Option 1: Starting from SMILES  
-1. Create a configuration file (your_molecule_config.yaml):
+1. Create a configuration file (config.yaml):
    ```yaml
    smiles: "CC(C)CC(C)C(=O)O"  # Your molecule's SMILES
    conformer_mode: search
-   num_conformers: 10
+   num_conformers: 5
    num_structures: 200
    list_numIons: [1, 2, 4]
    model_name: CHGNet
    ml_mode: proba_threshold_random
    sg_mode: ml
-   Z_mode: ml
+   Z_mode: sg_dependent
    density_mode: ml
    lattice_mode: None
    root_folder: results/my_molecule/
    ```
 1. Run the prediction:
    ```bash
-   python main.py your_molecule_config.yaml
+   python main.py results/my_molecule/config.yaml
    ```
 
 ### Option 2: Using Pre-existing Conformers
