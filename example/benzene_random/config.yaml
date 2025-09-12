@@ -1,0 +1,23 @@
+# Molecular Input
+smiles: c1ccccc1                     # SMILES notation of your molecule
+
+# Conformer Generation
+conformer_mode: search               # 'search' or 'predefined'
+num_conformers: 5                    # Number of conformers to generate
+
+# Structure Generation
+num_structures: 10                   # Number of crystal structures to generate
+list_numIons: [1,2,3,4,6,8,9,16]     # Possible Z values
+
+# ML-Guided Generation Modes
+ml_mode: proba_threshold_random      # ML probability mode
+sg_mode: random                      # 'ml', 'random', 'sg95', 'sg99', or specific SG number
+Z_mode: random                       # 'ml', 'random', or 'sg_dependent'
+density_mode: random                 # 'ml' or 'random'
+lattice_mode: None
+
+# Optimization
+model_name: CHGNet                   # 'CHGNet', 'ANI', or 'PFP'
+
+# Root
+root_folder: ../example/benzene_random/     # Path this yaml file exists
