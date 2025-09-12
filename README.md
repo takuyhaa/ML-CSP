@@ -10,7 +10,7 @@
 - The instructions and scripts are optimized for Linux environments
 - Windows users should use WSL (Windows Subsystem for Linux) or a virtual machine  
 
-**Python Version:** 3.9.18  
+**Python Version:** 3.9  
 
 **Hardware Requirements:**  
 - Minimum 8GB RAM (16GB+ recommended for larger molecules)
@@ -46,7 +46,7 @@
    pip install chgnet    # For CHGNet potential
    pip install torchani  # For ANI potential
    ```
-   *PFP is available on Matlantis and requires a valid license to use. For more information on obtaining a license and using PFP, please visit the Matlantis website.
+   *PFP is available on Matlantis and requires a valid license to use. For more information on obtaining a license and using PFP, please visit the Matlantis website (https://matlantis.com/en/).
 
 ## Quick Start Guide
 ### Running the Benzene Example
@@ -57,12 +57,12 @@ python main.py ../example/benzene_SPaDe/config.yaml   # For SPaDe-CSP
 ```
 This will:
 1. Generate conformers from SMILES (If the xyz file already exists in the xyz folder, use its molecular structure.)
-1. Create 10 crystal structures with random manner
-1. Optimize structures using CHGNet
-1. Save results to example/benzene/ directory
+1. Create 10 crystal structures
+1. Optimize structures using NNP
+1. Save results to the directory where yaml file exists
 
 ### Expected Output  
-After successful execution, you'll find in example/benzene/:
+After successful execution, you'll find in the directory where yaml file exists:
 - xyz/: Generated molecular conformers
 - init_structures.cif: Initial crystal structures before optimization
 - init_structures.pkl: Initial crystal structures before optimization
@@ -86,7 +86,7 @@ ID_0 (SG: 14, numIons: 4, n_atoms: 12, n_asym_unit: 12) generated
 Create a YAML configuration file for your molecule:
 ```yaml
 # Molecular Input
-smiles: "your_smiles_string"          # SMILES notation of your molecule
+smiles: your_smiles_string            # SMILES notation of your molecule
 
 # Conformer Generation
 conformer_mode: search                # 'search' or 'predefined'
@@ -114,7 +114,7 @@ root_folder: results/your_molecule/   # Path this yaml file exists
 ### Option 1: Starting from SMILES  
 1. Create a configuration file (config.yaml):
    ```yaml
-   smiles: "CC(C)CC(C)C(=O)O"  # Your molecule's SMILES
+   smiles: CC(C)CC(C)C(=O)O  # Your molecule's SMILES
    conformer_mode: search
    num_conformers: 5
    num_structures: 200
